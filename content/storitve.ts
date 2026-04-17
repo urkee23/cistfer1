@@ -10,13 +10,13 @@ export const STORITVE: Storitev[] = [
     id: 'fasade',
     naziv: 'Čiščenje fasad',
     opis: 'Nežno in učinkovito čiščenje fasad brez poškodb materiala. Primerno za vse vrste fasad — mineralne, silikonske, kontaktne.',
-    slika: '/slike/Fasade/fasada.png',
+    slika: '/slike/strehe/streha.png', // TODO: zamenjaj z /slike/Fasade/fasada.png
   },
   {
     id: 'dovozi',
     naziv: 'Čiščenje dovozov',
     opis: 'Profesionalno čiščenje dovozov z visokotlačnim čistilcem. Odstranimo mah, alge in umazanijo z betonskih in tlakovanih površin.',
-    slika: '/slike/Dovozi/dvorisce.png',
+    slika: '/slike/strehe/streha2.png', // TODO: zamenjaj z /slike/Dovozi/dvorisce.png
   },
   {
     id: 'soncne-elektrarne',
@@ -40,6 +40,6 @@ export const STORITVE: Storitev[] = [
     id: 'stekla',
     naziv: 'Čiščenje steklenih površin',
     opis: 'Čiščenje oken, zimskih vrtov in steklenih fasad. Brez prog, brez sledi — profesionalni rezultat.',
-    slika: '/slike/stekla/terasa.png',
+    slika: '/slike/Poslovni prostori/notranjost.png', // TODO: zamenjaj z /slike/stekla/terasa.png
   },
 ]
