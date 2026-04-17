@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import { Lexend, Source_Sans_3 } from 'next/font/google'
 import './globals.css'
+import Navbar from '@/components/layout/Navbar'
 
 const lexend = Lexend({
   subsets: ['latin'],
@@ -42,6 +43,7 @@ export default function RootLayout({
   return (
     <html lang="sl">
       <body className={`${lexend.variable} ${sourceSans.variable}`}>
+        <Navbar />
         {children}
       </body>
     </html>
