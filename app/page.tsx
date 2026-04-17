@@ -8,6 +8,7 @@ import PredPotem from '@/components/sections/PredPotem'
 import CtaBand from '@/components/sections/CtaBand'
 import FAQ from '@/components/sections/FAQ'
 import Pokritost from '@/components/sections/Pokritost'
+import Kontakt from '@/components/sections/Kontakt'
 
 export default function Home() {
   return (
@@ -22,6 +23,7 @@ export default function Home() {
       <CtaBand />
       <FAQ />
       <Pokritost />
+      <Kontakt />
     </main>
   )
 }

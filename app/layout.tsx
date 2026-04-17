@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 import { Lexend, Source_Sans_3 } from 'next/font/google'
 import './globals.css'
 import Navbar from '@/components/layout/Navbar'
+import Footer from '@/components/layout/Footer'
 import RevealObserver from '@/components/RevealObserver'
 
 const lexend = Lexend({
@@ -46,6 +47,7 @@ export default function RootLayout({
       <body className={`${lexend.variable} ${sourceSans.variable}`}>
         <Navbar />
         {children}
+        <Footer />
         <RevealObserver />
       </body>
     </html>
