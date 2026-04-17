@@ -37,6 +37,19 @@ export const metadata: Metadata = {
   },
 }
 
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'LocalBusiness',
+  name: 'Čistfer',
+  description: 'Profesionalni čistilni servis zunanjih površin po celi Sloveniji.',
+  url: 'https://cistfer.si',
+  telephone: '+38631456663',
+  email: 'info@cistfer.si',
+  areaServed: 'SI',
+  priceRange: '€€',
+  serviceType: 'Čiščenje zunanjih površin',
+}
+
 export default function RootLayout({
   children,
 }: {
@@ -44,6 +57,12 @@ export default function RootLayout({
 }) {
   return (
     <html lang="sl">
+      <head>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
+      </head>
       <body className={`${lexend.variable} ${sourceSans.variable}`}>
         <Navbar />
         {children}
