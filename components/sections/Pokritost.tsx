@@ -49,7 +49,7 @@ export default function Pokritost() {
         }}>
           <p style={{ color: '#fff', fontFamily: 'var(--font-body)', lineHeight: 1.7 }}>
             <strong style={{ color: 'var(--brand)' }}>Niste prepričani?</strong> Pokličite nas in skupaj najdemo rešitev,
-            ne glede na vašo lokacijo v Sloveniji.
+            ne glede na vašo lokacijo.
           </p>
           <a href="#kontakt" style={{
             display: 'inline-block', marginTop: 'var(--space-lg)',

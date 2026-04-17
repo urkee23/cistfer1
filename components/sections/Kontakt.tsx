@@ -70,7 +70,7 @@ export default function Kontakt() {
           <div className="reveal">
             <div style={{
               background: '#fff', borderRadius: 'var(--radius-xl)',
-              padding: 'var(--space-2xl)', marginBottom: 'var(--space-xl)',
+              padding: 'var(--space-2xl)',
               boxShadow: '0 4px 24px rgba(12,27,46,0.06)',
             }}>
               <h3 style={{ fontFamily: 'var(--font-heading)', fontWeight: 700, color: 'var(--dark)', marginBottom: 'var(--space-xl)' }}>
@@ -99,18 +99,6 @@ export default function Kontakt() {
               ))}
             </div>
 
-            {/* Google Maps embed */}
-            <div style={{ borderRadius: 'var(--radius-xl)', overflow: 'hidden', boxShadow: '0 4px 24px rgba(12,27,46,0.06)' }}>
-              <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d175368.5!2d14.5058!3d46.0569!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47652d5b8e0c8a39%3A0x45a25e9bde5de0!2sLjubljana%2C%20Slovenia!5e0!3m2!1sen!2sSI!4v1"
-                width="100%"
-                height="200"
-                style={{ border: 0, display: 'block' }}
-                loading="lazy"
-                referrerPolicy="no-referrer-when-downgrade"
-                title="Lokacija Čistfer"
-              />
-            </div>
           </div>
 
           {/* Desna: obrazec */}
