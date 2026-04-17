@@ -60,24 +60,97 @@
   [id] { scroll-margin-top: calc(var(--nav-h) + 16px); }
 }
 
-/* Navbar responsive */
-@media (max-width: 768px) {
+/* ============================================================
+   RESPONSIVE — TABLET  (≤ 900px)
+   ============================================================ */
+@media (max-width: 900px) {
+  /* Navbar */
   .nav-desktop-links { display: none !important; }
   .nav-cta-btn { display: none !important; }
   .nav-hamburger { display: flex !important; }
-}
 
-@media (max-width: 900px) {
+  /* Hero — stack vertically, hide illustration */
+  .hero-section {
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    min-height: auto !important;
+    padding-top: calc(var(--nav-h) + 32px) !important;
+    padding-bottom: var(--space-3xl) !important;
+    gap: var(--space-2xl) !important;
+  }
+  .hero-text { width: 100% !important; }
+  .hero-illustration { display: none !important; }
+
+  /* Stats — keep 4 cols on tablet */
+
+  /* Grids */
   .storitve-grid { grid-template-columns: repeat(2, 1fr) !important; }
-  .proces-grid { grid-template-columns: repeat(2, 1fr) !important; }
+  .proces-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: var(--space-xl) !important;
+  }
   .proces-line { display: none !important; }
   .pred-potem-grid { grid-template-columns: 1fr !important; }
   .about-grid { grid-template-columns: 1fr !important; }
   .kontakt-grid { grid-template-columns: 1fr !important; }
-  .footer-grid { grid-template-columns: 1fr 1fr !important; }
+  .footer-grid {
+    grid-template-columns: 1fr 1fr !important;
+    gap: var(--space-2xl) !important;
+  }
 }
+
+/* ============================================================
+   RESPONSIVE — MOBILE  (≤ 600px)
+   ============================================================ */
 @media (max-width: 600px) {
+  /* Stats */
+  .stats-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+    margin-top: 0 !important;       /* remove negative overlap on mobile */
+  }
+  /* Remove inline border-right on stats items inside 2-col grid */
+  .stats-grid > div {
+    border-right: none !important;
+    border-bottom: 1px solid var(--border-light);
+  }
+  .stats-grid > div:nth-child(odd) {
+    border-right: 1px solid var(--border-light) !important;
+  }
+  .stats-grid > div:nth-last-child(-n+2) {
+    border-bottom: none;
+  }
+
+  /* Grids */
   .storitve-grid { grid-template-columns: 1fr !important; }
-  .stats-grid { grid-template-columns: repeat(2, 1fr) !important; }
-  .footer-grid { grid-template-columns: 1fr !important; }
+  .proces-grid {
+    grid-template-columns: 1fr !important;
+    gap: var(--space-xl) !important;
+  }
+  .footer-grid {
+    grid-template-columns: 1fr !important;
+    gap: var(--space-xl) !important;
+  }
+
+  /* Section padding reduction */
+  :root {
+    --section-pad: 64px;
+  }
+
+  /* Hero title font scale */
+  .hero-section h1 {
+    font-size: clamp(2rem, 8vw, 2.8rem) !important;
+    letter-spacing: -1px !important;
+  }
+
+  /* Kontakt form — prevent inputs overflowing */
+  .kontakt-grid input,
+  .kontakt-grid textarea {
+    box-sizing: border-box;
+  }
+
+  /* Footer bottom bar — stack on very small */
+  .footer-bottom {
+    flex-direction: column !important;
+    text-align: center !important;
+  }
 }

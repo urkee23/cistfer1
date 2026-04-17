@@ -41,7 +41,7 @@ export default function Footer() {
             <span style={{ display: 'block', color: 'rgba(255,255,255,0.65)', fontFamily: 'var(--font-body)', fontSize: '0.9rem', marginBottom: 'var(--space-sm)' }}>{CONTACT.delovniCas}</span>
           </div>
         </div>
-        <div style={{ borderTop: '1px solid rgba(255,255,255,0.08)', paddingTop: 'var(--space-xl)', display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: 'var(--space-md)' }}>
+        <div className="footer-bottom" style={{ borderTop: '1px solid rgba(255,255,255,0.08)', paddingTop: 'var(--space-xl)', display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: 'var(--space-md)' }}>
           <span style={{ color: 'rgba(255,255,255,0.35)', fontFamily: 'var(--font-body)', fontSize: '0.8rem' }}>
             © {leto} Čistfer. Vse pravice pridržane.
           </span>

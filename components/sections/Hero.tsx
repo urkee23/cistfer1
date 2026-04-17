@@ -165,7 +165,7 @@ export default function Hero() {
   }, [])
 
   return (
-    <section style={{
+    <section className="hero-section" style={{
       minHeight: '100vh',
       background: 'var(--dark)',
       display: 'flex',
@@ -193,7 +193,7 @@ export default function Hero() {
       }} />
 
       {/* Leva stran — tekst */}
-      <div style={{ flex: 1, minWidth: 0, position: 'relative', zIndex: 1 }}>
+      <div className="hero-text" style={{ flex: 1, minWidth: 0, position: 'relative', zIndex: 1 }}>
 
         {/* Chip */}
         <div style={{
@@ -304,7 +304,7 @@ export default function Hero() {
       </div>
 
       {/* Desna stran — before/after ilustracija */}
-      <div style={{
+      <div className="hero-illustration" style={{
         flex: 1, minWidth: 0, maxWidth: 560,
         position: 'relative', zIndex: 1,
       }}>
@@ -389,9 +389,6 @@ export default function Hero() {
         @keyframes pulse {
           0%, 100% { opacity: 1; box-shadow: 0 0 8px var(--brand); }
           50% { opacity: 0.6; box-shadow: 0 0 16px var(--brand); }
-        }
-        @media (max-width: 900px) {
-          section > div:last-of-type { display: none; }
         }
       `}</style>
     </section>
