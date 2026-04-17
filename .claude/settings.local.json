@@ -1,0 +1,16 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(gh repo:*)",
+      "WebFetch(domain:www.b-s.si)",
+      "WebFetch(domain:github.com)",
+      "Read(//c/xampp/htdocs/cistfer2//**)",
+      "Read(//c/wamp64/www/**)",
+      "Read(//c/wamp/www/**)",
+      "Read(//c/laragon/www/**)",
+      "mcp__Claude_in_Chrome__tabs_context_mcp",
+      "mcp__Claude_in_Chrome__navigate",
+      "mcp__Claude_in_Chrome__computer"
+    ]
+  }
+}
