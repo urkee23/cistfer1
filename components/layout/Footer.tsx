@@ -1,55 +1,54 @@
-import { CONTACT } from '@/content/config'
+import Link from 'next/link'
 
 export default function Footer() {
-  const leto = new Date().getFullYear()
-
   return (
-    <footer style={{ background: 'var(--dark)', color: '#fff', padding: 'var(--space-3xl) clamp(var(--space-lg), 5vw, var(--space-4xl)) var(--space-xl)' }}>
-      <div style={{ maxWidth: 'var(--max-w)', margin: '0 auto' }}>
-        <div style={{ display: 'grid', gridTemplateColumns: '2fr 1fr 1fr 1fr', gap: 'var(--space-3xl)', marginBottom: 'var(--space-3xl)' }} className="footer-grid">
-          <div>
-            <a href="#" style={{ fontFamily: 'var(--font-heading)', fontWeight: 800, fontSize: '1.45rem', color: '#fff', textDecoration: 'none', letterSpacing: '-0.5px' }}>
-              Čist<span style={{ color: 'var(--brand)' }}>fer</span>
-            </a>
-            <p style={{ color: 'rgba(255,255,255,0.45)', fontFamily: 'var(--font-body)', fontSize: '0.9rem', lineHeight: 1.7, marginTop: 'var(--space-md)', maxWidth: 240 }}>
-              Profesionalni čistilni servis zunanjih površin. Zanesljivo, temeljito in okolju prijazno.
-            </p>
-          </div>
-          <div>
-            <h4 style={{ fontFamily: 'var(--font-heading)', fontWeight: 700, marginBottom: 'var(--space-lg)', fontSize: '0.875rem', textTransform: 'uppercase', letterSpacing: '0.08em', color: 'rgba(255,255,255,0.5)' }}>Navigacija</h4>
-            {['#o-nas:O nas', '#storitve:Storitve', '#proces:Proces', '#faq:FAQ', '#kontakt:Kontakt'].map(item => {
-              const [href, label] = item.split(':')
-              return (
-                <a key={href} href={href} style={{ display: 'block', color: 'rgba(255,255,255,0.65)', fontFamily: 'var(--font-body)', fontSize: '0.9rem', textDecoration: 'none', marginBottom: 'var(--space-sm)' }}>
-                  {label}
-                </a>
-              )
-            })}
-          </div>
-          <div>
-            <h4 style={{ fontFamily: 'var(--font-heading)', fontWeight: 700, marginBottom: 'var(--space-lg)', fontSize: '0.875rem', textTransform: 'uppercase', letterSpacing: '0.08em', color: 'rgba(255,255,255,0.5)' }}>Storitve</h4>
-            {['Čiščenje fasad', 'Čiščenje teras', 'Čiščenje dovozov', 'Sončne elektrarne', 'Čiščenje streh'].map(s => (
-              <a key={s} href="#storitve" style={{ display: 'block', color: 'rgba(255,255,255,0.65)', fontFamily: 'var(--font-body)', fontSize: '0.9rem', textDecoration: 'none', marginBottom: 'var(--space-sm)' }}>
-                {s}
-              </a>
-            ))}
-          </div>
-          <div>
-            <h4 style={{ fontFamily: 'var(--font-heading)', fontWeight: 700, marginBottom: 'var(--space-lg)', fontSize: '0.875rem', textTransform: 'uppercase', letterSpacing: '0.08em', color: 'rgba(255,255,255,0.5)' }}>Kontakt</h4>
-            <a href={`tel:${CONTACT.telefon.replace(/\s/g, '')}`} style={{ display: 'block', color: 'rgba(255,255,255,0.65)', fontFamily: 'var(--font-body)', fontSize: '0.9rem', textDecoration: 'none', marginBottom: 'var(--space-sm)' }}>{CONTACT.telefon}</a>
-            <a href={`mailto:${CONTACT.email}`} style={{ display: 'block', color: 'rgba(255,255,255,0.65)', fontFamily: 'var(--font-body)', fontSize: '0.9rem', textDecoration: 'none', marginBottom: 'var(--space-sm)' }}>{CONTACT.email}</a>
-            <span style={{ display: 'block', color: 'rgba(255,255,255,0.65)', fontFamily: 'var(--font-body)', fontSize: '0.9rem', marginBottom: 'var(--space-sm)' }}>{CONTACT.delovniCas}</span>
-          </div>
+    <footer className="bg-[#0e0e0e] border-t-2 border-white">
+      <div className="grid grid-cols-1 md:grid-cols-4 gap-8 px-8 py-16 max-w-7xl mx-auto">
+        <div>
+          <h4 className="text-xl font-black text-white uppercase mb-4">ČISTFER</h4>
+          <p className="text-base text-[#8a919c] leading-relaxed">Zunanjost, ki spet zasije.</p>
         </div>
-        <div className="footer-bottom" style={{ borderTop: '1px solid rgba(255,255,255,0.08)', paddingTop: 'var(--space-xl)', display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: 'var(--space-md)' }}>
-          <span style={{ color: 'rgba(255,255,255,0.35)', fontFamily: 'var(--font-body)', fontSize: '0.8rem' }}>
-            © {leto} Čistfer. Vse pravice pridržane.
-          </span>
-          <span style={{ color: 'rgba(255,255,255,0.35)', fontFamily: 'var(--font-body)', fontSize: '0.8rem' }}>
-            Zasebnost · Piškotki
-          </span>
+        <div>
+          <h5 className="text-xs font-bold uppercase text-[#9ccaff] tracking-widest mb-4">STORITVE</h5>
+          <ul className="space-y-2 text-base text-[#8a919c]">
+            {['Fasade', 'Talne površine', 'Strešne kritine', 'Sončne elektrarne','Steklene površine'].map(s => (
+              <li key={s}><a href="#storitve" className="hover:text-[#9ccaff] transition-colors">{s}</a></li>
+            ))}
+          </ul>
+        </div>
+        <div>
+          <h5 className="text-xs font-bold uppercase text-[#9ccaff] tracking-widest mb-4">POVEZAVE</h5>
+          <ul className="space-y-2 text-base text-[#8a919c]">
+            <li><a href="#o-nas" className="hover:text-[#9ccaff] transition-colors">O nas</a></li>
+            <li><a href="#kako-delamo" className="hover:text-[#9ccaff] transition-colors">Kako delamo</a></li>
+            <li><a href="#faq" className="hover:text-[#9ccaff] transition-colors">FAQ</a></li>
+            <li><a href="#kontakt" className="hover:text-[#9ccaff] transition-colors">Kontakt</a></li>
+          </ul>
+        </div>
+        <div>
+          <h5 className="text-xs font-bold uppercase text-[#9ccaff] tracking-widest mb-4">KONTAKT</h5>
+          <ul className="space-y-2 text-base text-[#8a919c]">
+            <li>+386 31 456 663</li>
+            <li>info@cistfer.si</li>
+            <li>Pon–Pet 7:00–18:00</li>
+            <li className="pt-2">Ulica XXX. divizije 5A<br />5000 Nova Gorica</li>
+            <li className="pt-2 border-t border-[#404751] text-xs leading-relaxed">
+              Tjaš Furlan s.p.<br />
+              Mat. št.: 9835342000<br />
+              Davčna št.: 70483515<br />
+              Vpisano pri AJPES
+            </li>
+          </ul>
         </div>
       </div>
-    </footer>
+      <div className="border-t border-[#404751] px-8 py-4 max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-2">
+        <span className="text-xs font-bold uppercase text-[#8a919c]">© {new Date().getFullYear()} Čistfer · Vse pravice pridržane.</span>
+        <span className="text-xs font-bold uppercase text-[#8a919c]">
+          <Link href="/politika-zasebnosti" className="hover:text-[#9ccaff] transition-colors">Politika zasebnosti</Link>
+          <span className="mx-2">·</span>
+          <Link href="/politika-zasebnosti#piskotki" className="hover:text-[#9ccaff] transition-colors">Piškotki</Link>
+        </span>
+      </div>
+    </footer >
   )
 }

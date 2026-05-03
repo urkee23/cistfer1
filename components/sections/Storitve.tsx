@@ -1,58 +1,95 @@
-import Image from 'next/image'
-import { STORITVE } from '@/content/storitve'
-
 export default function Storitve() {
   return (
-    <section id="storitve" style={{ background: 'var(--dark)', padding: 'var(--section-pad) 0' }}>
-      <div style={{ maxWidth: 'var(--max-w)', margin: '0 auto', padding: '0 clamp(var(--space-lg), 5vw, var(--space-4xl))' }}>
-        <div className="reveal" style={{ textAlign: 'center', marginBottom: 'var(--space-3xl)' }}>
-          <div style={{
-            display: 'inline-flex', alignItems: 'center', gap: 8, marginBottom: 'var(--space-md)',
-            color: 'var(--brand)', fontSize: '0.8rem', fontWeight: 700,
-            fontFamily: 'var(--font-body)', textTransform: 'uppercase', letterSpacing: '0.1em',
-          }}>
-            <span style={{ width: 24, height: 2, background: 'var(--brand)', display: 'inline-block' }} />
-            Storitve
-          </div>
-          <h2 style={{
-            fontFamily: 'var(--font-heading)', fontWeight: 800,
-            fontSize: 'clamp(1.8rem, 3.5vw, 2.8rem)',
-            color: '#fff', letterSpacing: '-0.8px',
-          }}>
-            Naša področja delovanja
+    <section className="bg-[#1c1b1b] py-16 px-6 md:px-8 border-b border-[#404751]" id="storitve">
+      <div className="max-w-7xl mx-auto">
+        <div className="mb-10">
+          <span className="text-xs font-bold text-[#9ccaff] uppercase tracking-widest block mb-2">STORITVE</span>
+          <h2 className="text-[40px] lg:text-[56px] font-black text-[#e0e2e9] uppercase tracking-tighter leading-[1.05]">
+            Profesionalno čiščenje za vsako površino.
           </h2>
-          <p style={{ color: 'rgba(255,255,255,0.55)', maxWidth: 540, margin: 'var(--space-md) auto 0', fontFamily: 'var(--font-body)' }}>
-            Pokrivamo celoten spekter čiščenja zunanjih površin — od zasebnih domov do poslovnih objektov.
-          </p>
         </div>
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
 
-        <div style={{
-          display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)',
-          gap: 'var(--space-xl)',
-        }} className="storitve-grid">
-          {STORITVE.map(s => (
-            <div key={s.id} className="reveal" style={{
-              background: 'rgba(255,255,255,0.04)',
-              border: '1px solid rgba(255,255,255,0.08)',
-              borderRadius: 'var(--radius-xl)', overflow: 'hidden',
-              transition: 'transform var(--ease), border-color var(--ease)',
-            }}>
-              <div style={{ position: 'relative', aspectRatio: '16/9', background: 'rgba(255,255,255,0.06)' }}>
-                <Image src={s.slika} alt={s.naziv} fill style={{ objectFit: 'cover' }} />
-              </div>
-              <div style={{ padding: 'var(--space-xl)' }}>
-                <h3 style={{
-                  fontFamily: 'var(--font-heading)', fontWeight: 700,
-                  color: '#fff', marginBottom: 'var(--space-sm)',
-                }}>
-                  {s.naziv}
-                </h3>
-                <p style={{ color: 'rgba(255,255,255,0.55)', fontFamily: 'var(--font-body)', fontSize: '0.9rem', lineHeight: 1.6 }}>
-                  {s.opis}
-                </p>
-              </div>
+          {/* Featured — Fasade 2×2 */}
+          <a href="#kontakt" className="md:col-span-2 md:row-span-2 bg-[#31353a] border border-[#404751] p-6 flex flex-col justify-end min-h-[560px] relative overflow-hidden group hover:border-[#9ccaff] transition-colors cursor-pointer">
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
+              alt="Čiščenje fasad"
+              className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 scale-105 group-hover:scale-100"
+              src="/slike/storitve/fasade/fasada.jpg"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/30 to-black/5" />
+            <div className="relative z-10">
+              <span className="material-symbols-outlined text-[48px] text-[#9ccaff] mb-4 block">water_damage</span>
+              <h3 className="text-[32px] font-black text-[#e0e2e9] uppercase tracking-tighter mb-2">Fasade</h3>
+              <p className="text-[#c0c7d3] text-lg">Alge, mah, smog, madeži — čistimo vse vrste fasadnih sistemov. Naša najpogostejša storitev.</p>
             </div>
-          ))}
+          </a>
+
+          {/* Talne površine */}
+          <a href="#kontakt" className="bg-[#31353a] border border-[#404751] p-5 flex flex-col justify-end min-h-[280px] relative overflow-hidden group hover:border-[#9ccaff] transition-colors cursor-pointer">
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
+              alt="Talne površine"
+              className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 scale-105 group-hover:scale-100"
+              src="/slike/storitve/talne-povrsine/tla.jpeg"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/30 to-black/5" />
+            <div className="relative z-10">
+              <span className="material-symbols-outlined text-[32px] text-[#9ccaff] mb-2 block">floor</span>
+              <h3 className="text-[22px] font-black text-[#e0e2e9] uppercase tracking-tighter mb-1">Talne površine</h3>
+              <p className="text-[#c0c7d3] text-sm">Tlakovec, asfalt, beton. Dovozi in dvorišča kot novi.</p>
+            </div>
+          </a>
+
+          {/* Strešne kritine */}
+          <a href="#kontakt" className="bg-[#31353a] border border-[#404751] p-5 flex flex-col justify-end min-h-[280px] relative overflow-hidden group hover:border-[#9ccaff] transition-colors cursor-pointer">
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
+              alt="Strešne kritine"
+              className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 scale-105 group-hover:scale-100"
+              src="/slike/storitve/stresne-kritine/streha.png"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/30 to-black/5" />
+            <div className="relative z-10">
+              <span className="material-symbols-outlined text-[32px] text-[#9ccaff] mb-2 block">roofing</span>
+              <h3 className="text-[22px] font-black text-[#e0e2e9] uppercase tracking-tighter mb-1">Strešne kritine</h3>
+              <p className="text-[#c0c7d3] text-sm">Globinsko čiščenje opeke in betona. Podaljšamo življenjsko dobo strehe.</p>
+            </div>
+          </a>
+
+          {/* Sončne elektrarne */}
+          <a href="#kontakt" className="bg-[#31353a] border border-[#404751] p-5 flex flex-col justify-end min-h-[280px] relative overflow-hidden group hover:border-[#9ccaff] transition-colors cursor-pointer">
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
+              alt="Sončne elektrarne"
+              className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 scale-105 group-hover:scale-100"
+              src="/slike/storitve/soncne-elektrarne/soncni-paneli.png"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/30 to-black/5" />
+            <div className="relative z-10">
+              <span className="material-symbols-outlined text-[32px] text-[#9ccaff] mb-2 block">solar_power</span>
+              <h3 className="text-[22px] font-black text-[#e0e2e9] uppercase tracking-tighter mb-1">Sončne elektrarne</h3>
+              <p className="text-[#c0c7d3] text-sm">Umazani paneli = manj energije. Čisti paneli = več denarja v žepu.</p>
+            </div>
+          </a>
+
+          {/* Steklene površine */}
+          <a href="#kontakt" className="bg-[#31353a] border border-[#404751] p-5 flex flex-col justify-end min-h-[280px] relative overflow-hidden group hover:border-[#9ccaff] transition-colors cursor-pointer">
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
+              alt="Steklene površine"
+              className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 scale-105 group-hover:scale-100"
+              src="/slike/storitve/steklene-povrsine/notranjost.png"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/30 to-black/5" />
+            <div className="relative z-10">
+              <span className="material-symbols-outlined text-[32px] text-[#9ccaff] mb-2 block">window</span>
+              <h3 className="text-[22px] font-black text-[#e0e2e9] uppercase tracking-tighter mb-1">Steklene površine</h3>
+              <p className="text-[#c0c7d3] text-sm">Okna, fasadne steklene plošče, svetlobniki. Brez madežev in vodnih sledi.</p>
+            </div>
+          </a>
+
         </div>
       </div>
     </section>

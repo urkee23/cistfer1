@@ -2,38 +2,25 @@ export interface Korak {
   stevilka: number
   naziv: string
   opis: string
-  ikona: string // Lucide icon name
+  slika?: string
 }
 
 export const KORAKI: Korak[] = [
   {
     stevilka: 1,
-    naziv: 'Povpraševanje',
-    opis: 'Izpolnite kontaktni obrazec ali nas pokličite. V 24 urah prejmete povratni klic.',
-    ikona: 'MessageSquare',
+    naziv: 'Kontakt',
+    opis: 'Pišite ali pokličite. Odgovorimo v 24 urah.',
   },
   {
     stevilka: 2,
-    naziv: 'Brezplačen ogled',
-    opis: 'Pridemo na ogled površine in ocenimo obseg dela. Brez obveznosti, brez stroškov.',
-    ikona: 'Search',
+    naziv: 'Ogled in brezplačen test',
+    opis: 'Pridemo na lokacijo, opravimo brezplačen test in pripravimo fiksno ponudbo brez skritih stroškov.',
+    slika: '/slike/kako-delamo/brezplacen-test.jpeg',
   },
   {
     stevilka: 3,
-    naziv: 'Ponudba',
-    opis: 'V roku 24 ur prejmete jasno pisno ponudbo s ceno in predvidenim terminom.',
-    ikona: 'FileText',
-  },
-  {
-    stevilka: 4,
-    naziv: 'Izvedba',
-    opis: 'Na dogovorjeni dan pridemo z vso opremo. Površino pustimo čisto in uredno.',
-    ikona: 'Sparkles',
-  },
-  {
-    stevilka: 5,
-    naziv: 'Pregled kakovosti',
-    opis: 'Po končanem delu skupaj pregledamo rezultat. Vaše zadovoljstvo je naša prioriteta.',
-    ikona: 'CheckCircle',
+    naziv: 'Čiščenje in pregled',
+    opis: 'Očistimo vam učinkovito, vso umazanijo ter podaljšamo življenjsko dobo vašim površinam in jim povrnemo svež videz.',
+    slika: '/slike/kako-delamo/pregled.jpg',
   },
 ]

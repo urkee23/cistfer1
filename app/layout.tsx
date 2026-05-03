@@ -1,23 +1,16 @@
 import type { Metadata } from 'next'
-import { Lexend, Source_Sans_3 } from 'next/font/google'
+import { Lexend } from 'next/font/google'
 import './globals.css'
 import Navbar from '@/components/layout/Navbar'
 import Footer from '@/components/layout/Footer'
-import RevealObserver from '@/components/RevealObserver'
 
 const lexend = Lexend({
   subsets: ['latin'],
-  variable: '--font-lexend',
-  display: 'swap',
-})
-
-const sourceSans = Source_Sans_3({
-  subsets: ['latin'],
-  variable: '--font-source',
   display: 'swap',
 })
 
 export const metadata: Metadata = {
+  metadataBase: new URL('https://cistfer.si'),
   title: 'Čistfer — Čistilni servis zunanjih površin',
   description: 'Profesionalno čiščenje fasad, teras, dovozov in vseh zunanjih površin. Zanesljivo, temeljito in okolju prijazno.',
   keywords: 'čiščenje fasad, čiščenje teras, čiščenje dovozov, čistilni servis, Slovenija',
@@ -58,16 +51,19 @@ export default function RootLayout({
   return (
     <html lang="sl">
       <head>
+        <link
+          rel="stylesheet"
+          href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&display=block"
+        />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
       </head>
-      <body className={`${lexend.variable} ${sourceSans.variable}`}>
+      <body className={lexend.className}>
         <Navbar />
         {children}
         <Footer />
-        <RevealObserver />
       </body>
     </html>
   )

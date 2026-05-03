@@ -1,49 +1,44 @@
-import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion'
+'use client'
+
+import { useState } from 'react'
 import { FAQ as FAQ_DATA } from '@/content/faq'
 
 export default function FAQ() {
-  return (
-    <section id="faq" style={{
-      background: '#fff', padding: 'var(--section-pad) clamp(var(--space-lg), 5vw, var(--space-4xl))',
-    }}>
-      <div style={{ maxWidth: 760, margin: '0 auto' }}>
-        <div className="reveal" style={{ textAlign: 'center', marginBottom: 'var(--space-3xl)' }}>
-          <div style={{
-            display: 'inline-flex', alignItems: 'center', gap: 8, marginBottom: 'var(--space-md)',
-            color: 'var(--brand)', fontSize: '0.8rem', fontWeight: 700,
-            fontFamily: 'var(--font-body)', textTransform: 'uppercase', letterSpacing: '0.1em',
-          }}>
-            <span style={{ width: 24, height: 2, background: 'var(--brand)', display: 'inline-block' }} />
-            Pogosta vprašanja
-          </div>
-          <h2 style={{
-            fontFamily: 'var(--font-heading)', fontWeight: 800,
-            fontSize: 'clamp(1.8rem, 3.5vw, 2.8rem)',
-            color: 'var(--dark)', letterSpacing: '-0.8px',
-          }}>
-            Odgovori na vaša vprašanja
-          </h2>
-        </div>
+  const [openIndex, setOpenIndex] = useState<number | null>(0)
 
-        <Accordion multiple={false} className="reveal">
-          {FAQ_DATA.map((item, i) => (
-            <AccordionItem key={i} value={`item-${i}`} style={{ borderBottom: '1px solid var(--border-light)' }}>
-              <AccordionTrigger style={{
-                fontFamily: 'var(--font-heading)', fontWeight: 600,
-                color: 'var(--dark)', fontSize: '1rem', textAlign: 'left',
-                padding: 'var(--space-xl) 0',
-              }}>
-                {item.vprasanje}
-              </AccordionTrigger>
-              <AccordionContent style={{
-                fontFamily: 'var(--font-body)', color: 'var(--text-secondary)',
-                lineHeight: 1.7, paddingBottom: 'var(--space-xl)',
-              }}>
-                {item.odgovor}
-              </AccordionContent>
-            </AccordionItem>
-          ))}
-        </Accordion>
+  return (
+    <section className="py-16 bg-[#131313] px-6 md:px-8 border-b border-[#404751]" id="faq">
+      <div className="max-w-[760px] mx-auto">
+        <span className="text-xs font-bold uppercase text-[#9ccaff] tracking-widest block mb-4">POGOSTA VPRAŠANJA</span>
+        <h2 className="text-[40px] lg:text-[56px] font-black text-[#e0e2e9] uppercase tracking-tighter leading-[1.05] mb-10">
+          Odgovori na vaša vprašanja.
+        </h2>
+        <div className="space-y-2">
+          {FAQ_DATA.map(({ vprasanje: q, odgovor: a }, i) => {
+            const isOpen = openIndex === i
+            return (
+              <div
+                key={q}
+                className={`bg-[#1c1b1b] border border-[#404751] ${isOpen ? 'border-l-4 border-l-[#9ccaff]' : ''}`}
+              >
+                <button
+                  className="w-full flex justify-between items-center p-6 cursor-pointer text-left"
+                  onClick={() => setOpenIndex(isOpen ? null : i)}
+                  aria-expanded={isOpen}
+                >
+                  <span className="text-sm font-bold uppercase text-[#e0e2e9] tracking-wider">{q}</span>
+                  <span className={`material-symbols-outlined text-[#9ccaff] transition-transform shrink-0 ml-4 ${isOpen ? 'rotate-180' : ''}`}>expand_more</span>
+                </button>
+                <div
+                  className="overflow-hidden transition-all duration-300 ease-in-out"
+                  style={{ maxHeight: isOpen ? '400px' : '0px', opacity: isOpen ? 1 : 0 }}
+                >
+                  <p className="px-6 pb-6 text-[#c0c7d3] text-base">{a}</p>
+                </div>
+              </div>
+            )
+          })}
+        </div>
       </div>
     </section>
   )

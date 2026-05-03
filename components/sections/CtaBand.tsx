@@ -1,28 +1,17 @@
 export default function CtaBand() {
   return (
-    <div className="reveal" style={{
-      background: 'linear-gradient(135deg, var(--brand) 0%, var(--brand-deep) 100%)',
-      padding: 'var(--space-3xl) clamp(var(--space-lg), 5vw, var(--space-4xl))',
-      textAlign: 'center',
-    }}>
-      <h2 style={{
-        fontFamily: 'var(--font-heading)', fontWeight: 800,
-        fontSize: 'clamp(1.5rem, 3vw, 2.2rem)', color: '#fff',
-        letterSpacing: '-0.5px', marginBottom: 'var(--space-sm)',
-      }}>
-        Pridobite brezplačno ponudbo danes
-      </h2>
-      <p style={{ color: 'rgba(255,255,255,0.8)', fontFamily: 'var(--font-body)', marginBottom: 'var(--space-xl)' }}>
-        Pišite nam — v 24 urah prejmete povratno informacijo.
-      </p>
-      <a href="#kontakt" style={{
-        background: '#fff', color: 'var(--brand)',
-        borderRadius: 'var(--radius-full)', padding: '14px 36px',
-        fontFamily: 'var(--font-body)', fontWeight: 700, textDecoration: 'none',
-        display: 'inline-block',
-      }}>
-        Kontaktirajte nas →
-      </a>
-    </div>
+    <section className="bg-[#0077c2] py-10 px-6 md:px-8 border-b border-[#404751]">
+      <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-6 text-center md:text-left">
+        <h2 className="text-[28px] md:text-[36px] font-black text-white uppercase tracking-tighter">
+          Pripravljeni na čisto preobrazbo?
+        </h2>
+        <a
+          href="#kontakt"
+          className="bg-white text-[#0077c2] font-bold uppercase tracking-widest px-6 py-4 hover:bg-[#f9faff] hover:text-[#0077c2] transition-colors shrink-0 border border-white text-sm"
+        >
+          Zahtevaj brezplačno ponudbo
+        </a>
+      </div>
+    </section>
   )
 }

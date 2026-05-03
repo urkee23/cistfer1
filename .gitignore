@@ -34,6 +34,17 @@ yarn-error.log*
 .env*
 !.env.example
 
+# Claude Code — ne spada v repo
+.claude/
+CLAUDE.md
+AGENTS.md
+agency-agents/
+
+# Interni dokumenti — ne spadajo v repo
+docs/
+DEPLOY.md
+README.md
+
 # vercel
 .vercel
 

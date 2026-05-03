@@ -5,35 +5,27 @@ export interface FaqVprasanje {
 
 export const FAQ: FaqVprasanje[] = [
   {
-    vprasanje: 'Koliko stane čiščenje fasade?',
-    odgovor: 'Cena je odvisna od velikosti in stanja fasade. Okvirno: 3–6 €/m². Za točno ceno opravimo brezplačen ogled in vam pošljemo pisno ponudbo.',
+    vprasanje: 'Zakaj se čiščenje sploh splača?',
+    odgovor: 'Fasada ali streha pogosto ni poškodovana — samo umazana. Čiščenje jo vrne v prvotni videz za majhen delček cene barvanja ali zamenjave. Pri sončnih elektrarnah umazana površina pomeni tudi nižji izkoristek.',
   },
   {
-    vprasanje: 'Kako dolgo traja čiščenje?',
-    odgovor: 'Manjši objekt (do 200 m²) navadno zaključimo v enem dnevu. Za večje objekte se dogovorimo individualno.',
+    vprasanje: 'Ali pritisk vode lahko poškoduje fasado?',
+    odgovor: 'Ne, če delo opravlja izkušena ekipa z ustrezno opremo. Pritisk vedno prilagodimo vrsti površine. Pred čiščenjem ocenimo stanje fasade in izberemo metodo, ki zagotavlja čistočo brez poškodb.',
   },
   {
-    vprasanje: 'Kakšna čistila uporabljate?',
-    odgovor: 'Uporabljamo biološko razgradljiva čistila, ki so varna za ljudi, živali in okolje. Brez agresivnih kemikalij, ki bi poškodovale material.',
+    vprasanje: 'Koliko časa traja čiščenje?',
+    odgovor: 'Večino stanovanjskih objektov očistimo v enem do dveh delovnem dnevu. Čas je odvisen od velikosti in stopnje umazanosti površine. Točen termin in trajanje navedemo v ponudbi po brezplačnem ogledu.',
   },
   {
-    vprasanje: 'Ali delujete po celi Sloveniji?',
-    odgovor: 'Da, delujemo po vsej Sloveniji. Brez doplačila za prihod v regijah Ljubljana, Maribor, Celje, Koper in Nova Gorica. Za oddaljene lokacije se dogovorimo.',
+    vprasanje: 'So čistila varna za rastline in živali?',
+    odgovor: 'Da. Uporabljamo izključno biološko razgradljiva čistila, ki so certificirana kot varna za ljudi, hišne živali in rastline v okolici objekta. Brez agresivnih kemikalij, ki bi poškodovale material ali okolje.',
   },
   {
-    vprasanje: 'Kdaj je najboljši čas za čiščenje fasade?',
-    odgovor: 'Priporočamo spomladi (april–maj) ali jeseni (september–oktober). Temperatura mora biti nad 5°C in brez dežja vsaj 24 ur po čiščenju.',
+    vprasanje: 'Kako pogosto je priporočeno čiščenje?',
+    odgovor: 'Odvisno od lokacije in vrste površine. Fasade na vlažnih ali osenčenih legah potrebujejo čiščenje na 3–5 let, sončne elektrarne enkrat letno, strehe pa vsake 4–7 let. Po ogledu vam povemo kaj velja za vaš objekt.',
   },
   {
-    vprasanje: 'Ali moram biti prisoten med čiščenjem?',
-    odgovor: 'Ni nujno. Dogovorimo se za dostop do objekta in vas obvestimo ko smo končali. Fotografiramo rezultat pred in po čiščenju.',
-  },
-  {
-    vprasanje: 'Kako pogosto priporočate čiščenje?',
-    odgovor: 'Za fasade priporočamo čiščenje vsakih 3–5 let, odvisno od lokacije. Objekte blizu cest ali v vlažnem okolju priporočamo pogosteje.',
-  },
-  {
-    vprasanje: 'Ali ponujate garancijo na storitev?',
-    odgovor: 'Da. Če s čiščenjem niste zadovoljni, pridemo brezplačno na ponovni ogled in rešimo morebitne pomanjkljivosti.',
+    vprasanje: 'Ali delate tudi izven Primorske?',
+    odgovor: 'Da, pokrivamo celotno Primorsko in Notranjsko regijo — Nova Gorica, Koper, Ajdovščina, Sežana, Postojna, Idrija, Cerknica, Ljubljana in okolica. Za projekte nad 300 € je prihod brezplačen.',
   },
 ]

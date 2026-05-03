@@ -1,181 +1,83 @@
 'use client'
 
-import { useEffect, useState } from 'react'
+import { useState } from 'react'
 
 const LINKS = [
-  { href: '#o-nas', label: 'O nas' },
-  { href: '#storitve', label: 'Storitve' },
-  { href: '#proces', label: 'Proces' },
-  { href: '#faq', label: 'FAQ' },
-  { href: '#kontakt', label: 'Kontakt' },
+  { label: 'Storitve', href: '#storitve' },
+  { label: 'Vprašanja', href: '#faq' },
+  { label: 'Kontakt', href: '#kontakt' },
 ]
 
-const SECTIONS = ['o-nas', 'storitve', 'proces', 'faq', 'kontakt']
-
 export default function Navbar() {
-  const [scrolled, setScrolled] = useState(false)
-  const [active, setActive] = useState('')
-  const [menuOpen, setMenuOpen] = useState(false)
-
-  // Scroll-spy + sticky shadow
-  useEffect(() => {
-    const onScroll = () => {
-      setScrolled(window.scrollY > 20)
-
-      // Scroll-spy: katera sekcija je v viewportu
-      let current = ''
-      for (const id of SECTIONS) {
-        const el = document.getElementById(id)
-        if (el && window.scrollY >= el.offsetTop - 120) {
-          current = id
-        }
-      }
-      setActive(current)
-    }
-
-    window.addEventListener('scroll', onScroll, { passive: true })
-    return () => window.removeEventListener('scroll', onScroll)
-  }, [])
-
-  // Zapri mobile meni ob resize
-  useEffect(() => {
-    const onResize = () => { if (window.innerWidth >= 768) setMenuOpen(false) }
-    window.addEventListener('resize', onResize)
-    return () => window.removeEventListener('resize', onResize)
-  }, [])
+  const [mobileOpen, setMobileOpen] = useState(false)
 
   return (
     <>
-      <nav
-        style={{
-          position: 'fixed', top: 0, left: 0, right: 0, zIndex: 100,
-          height: 'var(--nav-h)',
-          display: 'flex', alignItems: 'center', gap: 'var(--space-xl)',
-          padding: '0 clamp(var(--space-lg), 4vw, var(--space-3xl))',
-          background: 'rgba(255,255,255,0.88)',
-          backdropFilter: 'blur(24px)',
-          borderBottom: '1px solid rgba(226,232,240,0.6)',
-          transition: 'var(--ease)',
-          boxShadow: scrolled ? '0 1px 24px rgba(12,27,46,0.06)' : 'none',
-        }}
-      >
-        {/* Logo */}
-        <a
-          href="#"
-          style={{
-            fontFamily: 'var(--font-heading)', fontWeight: 800, fontSize: '1.45rem',
-            color: 'var(--dark)', textDecoration: 'none', letterSpacing: '-0.5px',
-          }}
-        >
-          Čist<span style={{ color: 'var(--brand)' }}>fer</span>
-        </a>
-
-        {/* Desktop links — centrirani */}
-        <ul style={{
-          display: 'flex', gap: 'var(--space-xl)', listStyle: 'none',
-          position: 'absolute', left: '50%', transform: 'translateX(-50%)',
-          margin: 0, padding: 0,
-        }}
-          className="nav-desktop-links"
-        >
-          {LINKS.map(link => {
-            const id = link.href.replace('#', '')
-            const isActive = active === id
-            return (
-              <li key={link.href}>
-                <a
-                  href={link.href}
-                  style={{
-                    fontFamily: 'var(--font-body)', fontSize: '0.875rem', fontWeight: 600,
-                    color: isActive ? 'var(--brand)' : 'var(--text-secondary)',
-                    textDecoration: 'none', position: 'relative', padding: '4px 0',
-                    transition: 'color var(--ease)',
-                  }}
-                >
-                  {link.label}
-                  {/* Podčrtaj — aktiven link */}
-                  <span style={{
-                    position: 'absolute', bottom: -2, left: 0,
-                    width: isActive ? '100%' : '0%',
-                    height: 2, background: 'var(--brand)',
-                    borderRadius: 1, transition: 'width 0.3s ease',
-                  }} />
-                </a>
-              </li>
-            )
-          })}
-        </ul>
-
-        {/* CTA gumb — desktop */}
-        <a
-          href="#kontakt"
-          style={{
-            marginLeft: 'auto',
-            background: 'var(--brand)', color: '#fff',
-            borderRadius: 'var(--radius-full)',
-            padding: '10px 22px',
-            fontFamily: 'var(--font-body)', fontSize: '0.875rem', fontWeight: 700,
-            textDecoration: 'none', whiteSpace: 'nowrap',
-            transition: 'background var(--ease)',
-          }}
-          className="nav-cta-btn"
-        >
-          Brezplačna ponudba
-        </a>
-
-        {/* Hamburger — mobile */}
-        <button
-          onClick={() => setMenuOpen(v => !v)}
-          aria-label="Odpri meni"
-          style={{
-            display: 'none', flexDirection: 'column', gap: 5,
-            background: 'none', border: 'none', cursor: 'pointer', padding: 8,
-            marginLeft: 'auto',
-          }}
-          className="nav-hamburger"
-        >
-          {[0, 1, 2].map(i => (
-            <span key={i} style={{
-              display: 'block', width: 22, height: 2,
-              background: 'var(--dark)', borderRadius: 1,
-              transition: 'var(--ease)',
-            }} />
-          ))}
-        </button>
+      <nav className="fixed top-0 w-full z-50 border-b border-[#404751] bg-[#131313]/80 backdrop-blur-md">
+        <div className="flex justify-between items-center px-8 h-20 w-full">
+          <a href="#" className="text-2xl font-black tracking-tighter text-white uppercase cursor-pointer hover:opacity-80 transition-all duration-100">
+            ČISTFER
+          </a>
+          <div className="hidden md:flex gap-8 items-center">
+            {LINKS.map(({ label, href }) => (
+              <a
+                key={href}
+                href={href}
+                className="font-black uppercase tracking-widest text-sm text-white hover:bg-[#9ccaff] hover:text-black transition-all duration-100 px-3 py-2"
+              >
+                {label}
+              </a>
+            ))}
+          </div>
+          <div className="hidden md:flex items-center gap-6">
+            <a
+              href="#kontakt"
+              className="flex items-center gap-2 font-black uppercase tracking-widest text-sm text-white hover:text-[#9ccaff] transition-all duration-100"
+            >
+              <span className="material-symbols-outlined text-base">call</span>
+              031 456 663
+            </a>
+            <a
+              href="mailto:info@cistfer.si"
+              className="flex items-center gap-2 font-black uppercase tracking-widest text-sm text-white hover:text-[#9ccaff] transition-all duration-100"
+            >
+              <span className="material-symbols-outlined text-base">mail</span>
+              info@cistfer.si
+            </a>
+            <a
+              href="#kontakt"
+              className="bg-[#0077c2] text-white font-black uppercase tracking-widest text-sm px-6 py-3 border border-[#0077c2] hover:bg-transparent hover:text-[#0077c2] transition-all duration-100"
+            >
+              Brezplačna ponudba
+            </a>
+          </div>
+          <button
+            className="md:hidden text-white"
+            onClick={() => setMobileOpen(!mobileOpen)}
+            aria-label="Meni"
+          >
+            <span className="material-symbols-outlined text-3xl">{mobileOpen ? 'close' : 'menu'}</span>
+          </button>
+        </div>
       </nav>
 
       {/* Mobile overlay */}
-      {menuOpen && (
-        <div style={{
-          position: 'fixed', inset: 0, zIndex: 99,
-          background: 'rgba(12,27,46,0.97)',
-          display: 'flex', flexDirection: 'column', alignItems: 'center',
-          justifyContent: 'center', gap: 'var(--space-xl)',
-          paddingTop: 'var(--nav-h)',
-        }}>
-          {LINKS.map(link => (
+      {mobileOpen && (
+        <div className="fixed inset-0 z-40 bg-[#131313] pt-20 flex flex-col items-center justify-center gap-8">
+          {LINKS.map(({ label, href }) => (
             <a
-              key={link.href}
-              href={link.href}
-              onClick={() => setMenuOpen(false)}
-              style={{
-                fontFamily: 'var(--font-heading)', fontSize: '1.8rem', fontWeight: 700,
-                color: '#fff', textDecoration: 'none',
-              }}
+              key={href}
+              href={href}
+              onClick={() => setMobileOpen(false)}
+              className="font-black uppercase tracking-widest text-2xl text-white hover:text-[#9ccaff] transition-colors"
             >
-              {link.label}
+              {label}
             </a>
           ))}
           <a
             href="#kontakt"
-            onClick={() => setMenuOpen(false)}
-            style={{
-              marginTop: 'var(--space-md)',
-              background: 'var(--brand)', color: '#fff',
-              borderRadius: 'var(--radius-full)', padding: '14px 36px',
-              fontFamily: 'var(--font-body)', fontWeight: 700, fontSize: '1rem',
-              textDecoration: 'none',
-            }}
+            onClick={() => setMobileOpen(false)}
+            className="bg-[#0077c2] text-white font-black uppercase tracking-widest text-sm px-8 py-4 border border-[#0077c2] mt-4"
           >
             Brezplačna ponudba
           </a>

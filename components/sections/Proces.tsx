@@ -1,82 +1,51 @@
-import { MessageSquare, Search, FileText, Sparkles, CheckCircle, type LucideIcon } from 'lucide-react'
+import Image from 'next/image'
 import { KORAKI } from '@/content/proces'
-
-const IKONE: Record<string, LucideIcon> = { MessageSquare, Search, FileText, Sparkles, CheckCircle }
 
 export default function Proces() {
   return (
-    <section id="proces" style={{
-      padding: 'var(--section-pad) clamp(var(--space-lg), 5vw, var(--space-4xl))',
-      maxWidth: 'var(--max-w)', margin: '0 auto',
-    }}>
-      <div className="reveal" style={{ textAlign: 'center', marginBottom: 'var(--space-3xl)' }}>
-        <div style={{
-          display: 'inline-flex', alignItems: 'center', gap: 8, marginBottom: 'var(--space-md)',
-          color: 'var(--brand)', fontSize: '0.8rem', fontWeight: 700,
-          fontFamily: 'var(--font-body)', textTransform: 'uppercase', letterSpacing: '0.1em',
-        }}>
-          <span style={{ width: 24, height: 2, background: 'var(--brand)', display: 'inline-block' }} />
-          Kako delamo
+    <section className="bg-[#131313] py-16 px-6 md:px-8 border-b border-[#404751]" id="kako-delamo">
+      <div className="max-w-7xl mx-auto">
+        <div className="mb-10">
+          <span className="text-xs font-bold text-[#9ccaff] uppercase tracking-widest block mb-2">KAKO DELAMO</span>
+          <h2 className="text-[40px] lg:text-[56px] font-black text-[#e0e2e9] uppercase tracking-tighter leading-[1.05]">
+            Preprosto. Hitro. Brez presenečenj.
+          </h2>
         </div>
-        <h2 style={{
-          fontFamily: 'var(--font-heading)', fontWeight: 800,
-          fontSize: 'clamp(1.8rem, 3.5vw, 2.8rem)',
-          color: 'var(--dark)', letterSpacing: '-0.8px',
-        }}>
-          Enostavno in pregledno sodelovanje
-        </h2>
-      </div>
-
-      <div style={{
-        display: 'grid', gridTemplateColumns: 'repeat(5, 1fr)',
-        gap: 'var(--space-lg)', position: 'relative',
-      }} className="proces-grid">
-        {/* Connecting line */}
-        <div style={{
-          position: 'absolute', top: 32, left: '10%', right: '10%', height: 2,
-          background: 'linear-gradient(90deg, var(--brand) 0%, var(--tertiary) 100%)',
-          zIndex: 0,
-        }} className="proces-line" />
-
-        {KORAKI.map((korak, i) => {
-          const Ikona = IKONE[korak.ikona]
-          return (
-            <div key={korak.stevilka} className="reveal" style={{
-              display: 'flex', flexDirection: 'column', alignItems: 'center',
-              textAlign: 'center', position: 'relative', zIndex: 1,
-            }}>
-              <div style={{
-                width: 64, height: 64, borderRadius: '50%',
-                background: i === 0 ? 'var(--brand)' : '#fff',
-                border: `2px solid ${i === 0 ? 'var(--brand)' : 'var(--border)'}`,
-                display: 'flex', alignItems: 'center', justifyContent: 'center',
-                marginBottom: 'var(--space-lg)',
-                boxShadow: '0 4px 16px rgba(0,119,194,0.15)',
-              }}>
-                {Ikona && <Ikona size={26} color={i === 0 ? '#fff' : 'var(--brand)'} />}
+        <div className="grid grid-cols-1 md:grid-cols-3 border border-[#404751] md:items-stretch">
+          {KORAKI.map((korak, i) => (
+            <div
+              key={korak.stevilka}
+              className={`relative overflow-hidden flex flex-col min-h-[460px] ${
+                i < KORAKI.length - 1 ? 'border-b md:border-b-0 md:border-r border-[#404751]' : ''
+              } ${!korak.slika ? (i === 1 ? 'bg-[#1c1b1b]' : '') : ''}`}
+            >
+              {korak.slika && (
+                <Image
+                  src={korak.slika}
+                  alt={korak.naziv}
+                  fill
+                  className="object-cover"
+                  sizes="(max-width: 768px) 100vw, 33vw"
+                />
+              )}
+              {korak.slika && (
+                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent" />
+              )}
+              <div className="absolute top-6 right-6 text-[60px] font-black leading-none select-none opacity-20 text-white z-10">
+                {String(korak.stevilka).padStart(2, '0')}
               </div>
-              <div style={{
-                fontSize: '0.7rem', fontWeight: 700, color: 'var(--brand)',
-                fontFamily: 'var(--font-body)', textTransform: 'uppercase',
-                letterSpacing: '0.1em', marginBottom: 4,
-              }}>
-                Korak {korak.stevilka}
+              <div className="relative z-10 p-10 mt-auto">
+                {i === 1 && (
+                  <span className="inline-block text-[10px] font-bold text-[#131313] bg-[#9ccaff] uppercase tracking-widest px-2 py-0.5 mb-3">
+                    BREZPLAČNO
+                  </span>
+                )}
+                <h3 className="text-[24px] font-black text-[#e0e2e9] uppercase tracking-tighter mb-2">{korak.naziv}</h3>
+                <p className={`text-base ${korak.slika ? 'text-white/80' : 'text-[#c0c7d3]'}`}>{korak.opis}</p>
               </div>
-              <h4 style={{
-                fontFamily: 'var(--font-heading)', fontWeight: 700,
-                color: 'var(--dark)', marginBottom: 'var(--space-sm)',
-              }}>
-                {korak.naziv}
-              </h4>
-              <p style={{
-                color: 'var(--text-secondary)', fontFamily: 'var(--font-body)',
-                fontSize: '0.85rem', lineHeight: 1.6,
-              }}>
-                {korak.opis}
-              </p>
             </div>
-          )
-        })}
+          ))}
+        </div>
       </div>
     </section>
   )

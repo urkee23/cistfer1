@@ -1,66 +1,27 @@
-'use client'
-
-import { useEffect, useRef } from 'react'
-import { STATISTIKE } from '@/content/config'
+const STATS = [
+  { value: '50+', label: 'Projektov' },
+  { value: '4', label: 'Let izkušenj' },
+  { value: '75%', label: 'Povrnjenega videza ' },
+  { value: '24h', label: 'Odzivni čas' },
+]
 
 export default function Stats() {
-  const refs = useRef<(HTMLSpanElement | null)[]>([])
-
-  useEffect(() => {
-    refs.current.forEach((el, i) => {
-      if (!el) return
-      const stat = STATISTIKE[i]
-      const obs = new IntersectionObserver(([entry]) => {
-        if (!entry.isIntersecting) return
-        let cur = 0
-        const step = stat.vrednost / 60
-        const timer = setInterval(() => {
-          cur += step
-          if (cur >= stat.vrednost) {
-            el.textContent = stat.vrednost + stat.enota
-            clearInterval(timer)
-          } else {
-            el.textContent = Math.floor(cur) + stat.enota
-          }
-        }, 16)
-        obs.disconnect()
-      }, { threshold: 0.5 })
-      obs.observe(el)
-    })
-  }, [])
-
   return (
-    <div style={{
-      display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)',
-      background: '#fff', borderRadius: 'var(--radius-xl)',
-      boxShadow: '0 8px 48px rgba(12,27,46,0.08)',
-      margin: '0 clamp(var(--space-lg), 5vw, var(--space-4xl))',
-      marginTop: -40, position: 'relative', zIndex: 10,
-    }} className="stats-grid">
-      {STATISTIKE.map((stat, i) => (
-        <div key={stat.naziv} style={{
-          padding: 'var(--space-2xl) var(--space-xl)',
-          textAlign: 'center',
-          borderRight: i < STATISTIKE.length - 1 ? '1px solid var(--border-light)' : 'none',
-        }}>
-          <div style={{
-            fontFamily: 'var(--font-heading)', fontWeight: 800,
-            fontSize: 'clamp(1.8rem, 3vw, 2.5rem)',
-            color: 'var(--brand)', lineHeight: 1,
-          }}>
-            <span ref={el => { refs.current[i] = el }}>
-              0{stat.enota}
-            </span>
+    <section className="w-full bg-white border-b border-[#404751]">
+      <div className="grid grid-cols-2 lg:grid-cols-4 w-full">
+        {STATS.map((stat, i) => (
+          <div
+            key={stat.label}
+            className={`py-12 px-6 flex flex-col items-center justify-center border-[#404751]/20
+              ${i < 3 ? 'border-r' : ''}
+              ${i < 2 ? 'border-b lg:border-b-0' : ''}
+            `}
+          >
+            <span className="text-[48px] font-black text-black leading-none mb-2">{stat.value}</span>
+            <span className="text-xs font-bold uppercase tracking-widest text-[#404751]">{stat.label}</span>
           </div>
-          <div style={{
-            fontFamily: 'var(--font-body)', fontSize: '0.8rem', fontWeight: 600,
-            color: 'var(--text-muted)', textTransform: 'uppercase',
-            letterSpacing: '0.08em', marginTop: 8,
-          }}>
-            {stat.naziv}
-          </div>
-        </div>
-      ))}
-    </div>
+        ))}
+      </div>
+    </section>
   )
 }
