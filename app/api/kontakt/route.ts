@@ -57,7 +57,7 @@ async function checkRateLimit(ip: string): Promise<boolean> {
   return checkRateLimitLocal(ip)
 }
 
-const ALLOWED_ORIGINS = ['https://cistfer.si', 'https://www.cistfer.si']
+const ALLOWED_ORIGINS = ['https://cistfer.si', 'https://www.cistfer.si', 'https://cistfer1.vercel.app']
 
 async function saveToGoogleSheets(data: FormData, storitevText: string, timestamp: string) {
   const url = process.env.GOOGLE_SCRIPT_URL
