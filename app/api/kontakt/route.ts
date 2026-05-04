@@ -51,8 +51,13 @@ function checkRateLimitLocal(ip: string): boolean {
 
 async function checkRateLimit(ip: string): Promise<boolean> {
   if (upstashRatelimit) {
-    const { success } = await upstashRatelimit.limit(ip)
-    return success
+    try {
+      const { success } = await upstashRatelimit.limit(ip)
+      return success
+    } catch (e) {
+      console.error('[kontakt] Upstash rate limit napaka, fallback na lokalni:', e)
+      return checkRateLimitLocal(ip)
+    }
   }
   return checkRateLimitLocal(ip)
 }
