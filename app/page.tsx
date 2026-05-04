@@ -8,20 +8,21 @@ import CtaBand from '@/components/sections/CtaBand'
 import FAQ from '@/components/sections/FAQ'
 import Pokritost from '@/components/sections/Pokritost'
 import Kontakt from '@/components/sections/Kontakt'
+import ScrollReveal from '@/components/ui/ScrollReveal'
 
 export default function Home() {
   return (
     <main className="pt-20">
       <Hero />
-      <Stats />
-      <ONas />
-      <ZaupajoNam />
-      <Storitve />
-      <Proces />
-      <CtaBand />
-      <FAQ />
-      <Pokritost />
-      <Kontakt />
+      <ScrollReveal><Stats /></ScrollReveal>
+      <ScrollReveal><ONas /></ScrollReveal>
+      <ScrollReveal><ZaupajoNam /></ScrollReveal>
+      <ScrollReveal><Storitve /></ScrollReveal>
+      <ScrollReveal><Proces /></ScrollReveal>
+      <ScrollReveal><CtaBand /></ScrollReveal>
+      <ScrollReveal><FAQ /></ScrollReveal>
+      <ScrollReveal><Pokritost /></ScrollReveal>
+      <ScrollReveal><Kontakt /></ScrollReveal>
     </main>
   )
 }

@@ -142,8 +142,8 @@ export default function Hero() {
       </div>
       <div className="w-full lg:w-1/2 relative min-h-[500px] lg:min-h-full bg-[#1c1b1b] overflow-hidden">
         <BeforeAfterSlider
-          before="/slike/hero/fasada-pred.jpg"
-          after="/slike/hero/fasada-potem.jpg"
+          before="/slike/hero/fasada-pred.webp"
+          after="/slike/hero/fasada-potem.webp"
           beforePosition="50% 50%"
           afterPosition="50% 50%"
         />

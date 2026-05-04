@@ -3,6 +3,7 @@ import { Lexend } from 'next/font/google'
 import './globals.css'
 import Navbar from '@/components/layout/Navbar'
 import Footer from '@/components/layout/Footer'
+import SmoothAnchorScroll from '@/components/ui/SmoothAnchorScroll'
 
 const lexend = Lexend({
   subsets: ['latin'],
@@ -11,22 +12,47 @@ const lexend = Lexend({
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://cistfer.si'),
-  title: 'Čistfer — Čistilni servis zunanjih površin',
-  description: 'Profesionalno čiščenje fasad, teras, dovozov in vseh zunanjih površin. Zanesljivo, temeljito in okolju prijazno.',
-  keywords: 'čiščenje fasad, čiščenje teras, čiščenje dovozov, čistilni servis, Slovenija',
+  title: {
+    default: 'Čistfer — Čistilni servis zunanjih površin',
+    template: '%s | Čistfer',
+  },
+  description: 'Čistfer — profesionalno čiščenje fasad, teras, dovozov in vseh zunanjih površin po celi Sloveniji. Zanesljivo, temeljito in okolju prijazno.',
+  keywords: 'čistfer, cistfer, cistfer.si, čiščenje fasad, čiščenje teras, čiščenje dovozov, čistilni servis, pranje fasad, čiščenje zunanjih površin, Slovenija',
+  authors: [{ name: 'Čistfer', url: 'https://cistfer.si' }],
+  creator: 'Čistfer',
+  publisher: 'Čistfer',
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+    },
+  },
+  alternates: {
+    canonical: 'https://cistfer.si',
+  },
   openGraph: {
     title: 'Čistfer — Čistilni servis zunanjih površin',
-    description: 'Profesionalno čiščenje zunanjih površin po celi Sloveniji.',
+    description: 'Čistfer — profesionalno čiščenje zunanjih površin po celi Sloveniji.',
+    url: 'https://cistfer.si',
+    siteName: 'Čistfer',
     locale: 'sl_SI',
     type: 'website',
     images: [
       {
-        url: '/og-image.jpg',
+        url: '/slike/hero/fasada-potem.jpg',
         width: 1200,
         height: 630,
         alt: 'Čistfer — Čistilni servis zunanjih površin',
       },
     ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Čistfer — Čistilni servis zunanjih površin',
+    description: 'Čistfer — profesionalno čiščenje zunanjih površin po celi Sloveniji.',
+    images: ['/slike/hero/fasada-potem.jpg'],
   },
 }
 
@@ -34,13 +60,19 @@ const jsonLd = {
   '@context': 'https://schema.org',
   '@type': 'LocalBusiness',
   name: 'Čistfer',
+  alternateName: ['cistfer', 'cistfer.si'],
   description: 'Profesionalni čistilni servis zunanjih površin po celi Sloveniji.',
   url: 'https://cistfer.si',
   telephone: '+38631456663',
   email: 'info@cistfer.si',
-  areaServed: 'SI',
+  areaServed: {
+    '@type': 'Country',
+    name: 'Slovenija',
+    sameAs: 'https://www.wikidata.org/wiki/Q215',
+  },
   priceRange: '€€',
   serviceType: 'Čiščenje zunanjih površin',
+  sameAs: ['https://cistfer.si'],
 }
 
 export default function RootLayout({
@@ -61,6 +93,7 @@ export default function RootLayout({
         />
       </head>
       <body className={lexend.className}>
+        <SmoothAnchorScroll />
         <Navbar />
         {children}
         <Footer />
