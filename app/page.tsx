@@ -1,7 +1,6 @@
 import Hero from '@/components/sections/Hero'
 import Stats from '@/components/sections/Stats'
 import ONas from '@/components/sections/ONas'
-import ZaupajoNam from '@/components/sections/ZaupajoNam'
 import Storitve from '@/components/sections/Storitve'
 import Proces from '@/components/sections/Proces'
 import CtaBand from '@/components/sections/CtaBand'
@@ -16,7 +15,6 @@ export default function Home() {
       <Hero />
       <ScrollReveal><Stats /></ScrollReveal>
       <ScrollReveal><ONas /></ScrollReveal>
-      <ScrollReveal><ZaupajoNam /></ScrollReveal>
       <ScrollReveal><Storitve /></ScrollReveal>
       <ScrollReveal><Proces /></ScrollReveal>
       <ScrollReveal><CtaBand /></ScrollReveal>
