@@ -61,7 +61,7 @@ export default function ONas() {
                   alt="Čistfer ekipa pri delu — visokotlačno čiščenje fasade"
                   className="w-full h-full object-cover"
                   style={{ objectPosition: 'center 65%' }}
-                  src="/slike/o-nas/cistfer-akcija.jpg"
+                  src="/slike/o-nas/cistfer-akcija.webp"
                 />
               </div>
               <div className="absolute -bottom-6 -left-6 w-32 h-32 border-b-4 border-l-4 border-[#9ccaff] z-0" />

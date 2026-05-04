@@ -1,20 +1,29 @@
 import sharp from 'sharp'
-import { readFileSync, statSync } from 'fs'
+import { statSync } from 'fs'
 
 const images = [
-  {
-    input: 'public/slike/hero/fasada-pred.jpg',
-    output: 'public/slike/hero/fasada-pred.webp',
-  },
-  {
-    input: 'public/slike/hero/fasada-potem.jpg',
-    output: 'public/slike/hero/fasada-potem.webp',
-  },
+  'public/slike/hero/fasada-pred.jpg',
+  'public/slike/hero/fasada-potem.jpg',
+  'public/slike/o-nas/cistfer-akcija.jpg',
+  'public/slike/storitve/steklene-povrsine/notranjost.png',
+  'public/slike/storitve/stresne-kritine/streha.png',
+  'public/slike/storitve/stresne-kritine/streha2.png',
+  'public/slike/storitve/soncne-elektrarne/soncni-paneli.png',
+  'public/slike/storitve/fasade/fasada.jpg',
+  'public/slike/kako-delamo/pregled.jpg',
 ]
 
-for (const { input, output } of images) {
-  const beforeSize = (statSync(input).size / 1024).toFixed(0)
+let totalBefore = 0
+let totalAfter = 0
+
+for (const input of images) {
+  const output = input.replace(/\.(jpg|png)$/, '.webp')
+  const beforeSize = statSync(input).size / 1024
   await sharp(input).webp({ quality: 82 }).toFile(output)
-  const afterSize = (statSync(output).size / 1024).toFixed(0)
-  console.log(`${input}: ${beforeSize}KB → ${afterSize}KB`)
+  const afterSize = statSync(output).size / 1024
+  totalBefore += beforeSize
+  totalAfter += afterSize
+  console.log(`${input.split('/').pop()}: ${beforeSize.toFixed(0)}KB → ${afterSize.toFixed(0)}KB`)
 }
+
+console.log(`\nSkupaj: ${totalBefore.toFixed(0)}KB → ${totalAfter.toFixed(0)}KB (-${((1 - totalAfter / totalBefore) * 100).toFixed(0)}%)`)

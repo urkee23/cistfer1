@@ -4,11 +4,11 @@ import { useState, useRef, SyntheticEvent } from 'react'
 import Link from 'next/link'
 
 const SERVICES = [
-  { name: 'Fasade', img: '/slike/storitve/fasade/fasada.jpg', icon: 'water_damage', featured: true },
-  { name: 'Talne površine', img: '/slike/storitve/talne-povrsine/tla.jpeg', icon: 'floor', featured: false },
-  { name: 'Strešne kritine', img: '/slike/storitve/stresne-kritine/streha.png', icon: 'roofing', featured: false },
-  { name: 'Sončne elektrarne', img: '/slike/storitve/soncne-elektrarne/soncni-paneli.png', icon: 'solar_power', featured: false },
-  { name: 'Steklene površine', img: '/slike/storitve/steklene-povrsine/notranjost.png', icon: 'window', featured: false },
+  { name: 'Fasade', img: '/slike/storitve/fasade/fasada.webp', icon: 'water_damage', featured: true },
+  { name: 'Talne površine', img: '/slike/storitve/talne-povrsine/tla.webp', icon: 'floor', featured: false },
+  { name: 'Strešne kritine', img: '/slike/storitve/stresne-kritine/streha.webp', icon: 'roofing', featured: false },
+  { name: 'Sončne elektrarne', img: '/slike/storitve/soncne-elektrarne/soncni-paneli.webp', icon: 'solar_power', featured: false },
+  { name: 'Steklene površine', img: '/slike/storitve/steklene-povrsine/notranjost.webp', icon: 'window', featured: false },
 ]
 
 export default function Kontakt() {

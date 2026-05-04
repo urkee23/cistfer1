@@ -16,7 +16,7 @@ export default function Storitve() {
             <img
               alt="Čiščenje fasad"
               className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 scale-105 group-hover:scale-100"
-              src="/slike/storitve/fasade/fasada.jpg"
+              src="/slike/storitve/fasade/fasada.webp"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/30 to-black/5" />
             <div className="relative z-10">
@@ -32,7 +32,7 @@ export default function Storitve() {
             <img
               alt="Talne površine"
               className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 scale-105 group-hover:scale-100"
-              src="/slike/storitve/talne-povrsine/tla.jpeg"
+              src="/slike/storitve/talne-povrsine/tla.webp"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/30 to-black/5" />
             <div className="relative z-10">
@@ -48,7 +48,7 @@ export default function Storitve() {
             <img
               alt="Strešne kritine"
               className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 scale-105 group-hover:scale-100"
-              src="/slike/storitve/stresne-kritine/streha.png"
+              src="/slike/storitve/stresne-kritine/streha.webp"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/30 to-black/5" />
             <div className="relative z-10">
@@ -64,7 +64,7 @@ export default function Storitve() {
             <img
               alt="Sončne elektrarne"
               className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 scale-105 group-hover:scale-100"
-              src="/slike/storitve/soncne-elektrarne/soncni-paneli.png"
+              src="/slike/storitve/soncne-elektrarne/soncni-paneli.webp"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/30 to-black/5" />
             <div className="relative z-10">
@@ -80,7 +80,7 @@ export default function Storitve() {
             <img
               alt="Steklene površine"
               className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 scale-105 group-hover:scale-100"
-              src="/slike/storitve/steklene-povrsine/notranjost.png"
+              src="/slike/storitve/steklene-povrsine/notranjost.webp"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/30 to-black/5" />
             <div className="relative z-10">
