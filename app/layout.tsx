@@ -11,14 +11,14 @@ const lexend = Lexend({
 })
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://cistfer.si'),
+  metadataBase: new URL('https://www.cistfer.si'),
   title: {
     default: 'Čistfer — Čistilni servis zunanjih površin',
     template: '%s | Čistfer',
   },
   description: 'Čistfer — profesionalno čiščenje fasad, teras, dovozov in vseh zunanjih površin po celi Sloveniji. Zanesljivo, temeljito in okolju prijazno.',
   keywords: 'čistfer, cistfer, cistfer.si, čiščenje fasad, čiščenje teras, čiščenje dovozov, čistilni servis, pranje fasad, čiščenje zunanjih površin, Slovenija',
-  authors: [{ name: 'Čistfer', url: 'https://cistfer.si' }],
+  authors: [{ name: 'Čistfer', url: 'https://www.cistfer.si' }],
   creator: 'Čistfer',
   publisher: 'Čistfer',
   robots: {
@@ -30,12 +30,12 @@ export const metadata: Metadata = {
     },
   },
   alternates: {
-    canonical: 'https://cistfer.si',
+    canonical: 'https://www.cistfer.si',
   },
   openGraph: {
     title: 'Čistfer — Čistilni servis zunanjih površin',
     description: 'Čistfer — profesionalno čiščenje zunanjih površin po celi Sloveniji.',
-    url: 'https://cistfer.si',
+    url: 'https://www.cistfer.si',
     siteName: 'Čistfer',
     locale: 'sl_SI',
     type: 'website',
@@ -62,7 +62,7 @@ const jsonLd = {
   name: 'Čistfer',
   alternateName: ['cistfer', 'cistfer.si'],
   description: 'Profesionalni čistilni servis zunanjih površin po celi Sloveniji.',
-  url: 'https://cistfer.si',
+  url: 'https://www.cistfer.si',
   telephone: '+38631456663',
   email: 'info@cistfer.si',
   areaServed: {
@@ -72,7 +72,7 @@ const jsonLd = {
   },
   priceRange: '€€',
   serviceType: 'Čiščenje zunanjih površin',
-  sameAs: ['https://cistfer.si'],
+  sameAs: ['https://www.cistfer.si'],
 }
 
 export default function RootLayout({
