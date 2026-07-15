@@ -17,10 +17,6 @@ export const FAQ: FaqVprasanje[] = [
     odgovor: 'Večino stanovanjskih objektov očistimo v enem do dveh delovnem dnevu. Čas je odvisen od velikosti in stopnje umazanosti površine. Točen termin in trajanje navedemo v ponudbi po brezplačnem ogledu.',
   },
   {
-    vprasanje: 'So čistila varna za rastline in živali?',
-    odgovor: 'Da. Uporabljamo izključno biološko razgradljiva čistila, ki so certificirana kot varna za ljudi, hišne živali in rastline v okolici objekta. Brez agresivnih kemikalij, ki bi poškodovale material ali okolje.',
-  },
-  {
     vprasanje: 'Kako pogosto je priporočeno čiščenje?',
     odgovor: 'Odvisno od lokacije in vrste površine. Fasade na vlažnih ali osenčenih legah potrebujejo čiščenje na 3–5 let, sončne elektrarne enkrat letno, strehe pa vsake 4–7 let. Po ogledu vam povemo kaj velja za vaš objekt.',
   },
