@@ -15,8 +15,8 @@ export default function Navbar() {
     <>
       <nav className="fixed top-0 w-full z-50 border-b border-[#404751] bg-[#131313]/80 backdrop-blur-md">
         <div className="flex justify-between items-center px-8 h-20 w-full">
-          <a href="#" className="text-2xl font-black tracking-tighter text-white uppercase cursor-pointer hover:opacity-80 transition-all duration-100">
-            ČISTFER
+          <a href="#" className="text-2xl font-black tracking-tighter uppercase cursor-pointer hover:opacity-80 transition-all duration-100">
+            <span className="text-[#0077c2]">čist</span><span className="text-white">fer</span>
           </a>
           <div className="hidden md:flex gap-8 items-center">
             {LINKS.map(({ label, href }) => (

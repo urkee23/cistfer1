@@ -5,7 +5,7 @@ export default function Footer() {
     <footer className="bg-[#0e0e0e] border-t-2 border-white">
       <div className="grid grid-cols-1 md:grid-cols-4 gap-8 px-8 py-16 max-w-7xl mx-auto">
         <div>
-          <h4 className="text-xl font-black text-white uppercase mb-4">ČISTFER</h4>
+          <h4 className="text-xl font-black uppercase mb-4"><span className="text-[#0077c2]">čist</span><span className="text-white">fer</span></h4>
           <p className="text-base text-[#8a919c] leading-relaxed">Zunanjost, ki spet zasije.</p>
         </div>
         <div>
