@@ -36,12 +36,14 @@ export default function PredPotem() {
                     alt={`${label} pred`}
                     className={`w-[200%] max-w-none h-full object-cover ${filterBefore}`}
                     src={before}
+                    loading="lazy"
                   />
                 </div>
                 <img
                   alt={`${label} po`}
                   className="absolute inset-0 w-full h-full object-cover z-10"
                   src={after}
+                  loading="lazy"
                 />
                 <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-8 h-8 bg-[#131313] border border-[#9ccaff] flex items-center justify-center z-30">
                   <span className="material-symbols-outlined text-[16px] text-[#9ccaff]">swap_horiz</span>

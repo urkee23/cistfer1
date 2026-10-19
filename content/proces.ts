@@ -21,6 +21,6 @@ export const KORAKI: Korak[] = [
     stevilka: 3,
     naziv: 'Čiščenje in pregled',
     opis: 'Očistimo vam učinkovito, vso umazanijo ter podaljšamo življenjsko dobo vašim površinam in jim povrnemo svež videz.',
-    slika: '/slike/kako-delamo/pregled.jpg',
+    slika: '/slike/kako-delamo/pregled.webp',
   },
 ]

@@ -1,3 +1,5 @@
+import Image from 'next/image'
+
 export default function Storitve() {
   return (
     <section className="bg-[#1c1b1b] py-16 px-6 md:px-8 border-b border-[#404751]" id="storitve">
@@ -12,11 +14,12 @@ export default function Storitve() {
 
           {/* Featured — Fasade 2×2 */}
           <a href="#kontakt" className="md:col-span-2 md:row-span-2 bg-[#31353a] border border-[#404751] p-6 flex flex-col justify-end min-h-[560px] relative overflow-hidden group hover:border-[#9ccaff] transition-colors cursor-pointer">
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img
+            <Image
               alt="Čiščenje fasad"
-              className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 scale-105 group-hover:scale-100"
               src="/slike/storitve/fasade/fasada.webp"
+              fill
+              className="object-cover transition-transform duration-500 scale-105 group-hover:scale-100"
+              sizes="(max-width: 768px) 100vw, 50vw"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/30 to-black/5" />
             <div className="relative z-10">
@@ -28,11 +31,12 @@ export default function Storitve() {
 
           {/* Talne površine */}
           <a href="#kontakt" className="bg-[#31353a] border border-[#404751] p-5 flex flex-col justify-end min-h-[280px] relative overflow-hidden group hover:border-[#9ccaff] transition-colors cursor-pointer">
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img
+            <Image
               alt="Talne površine"
-              className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 scale-105 group-hover:scale-100"
               src="/slike/storitve/talne-povrsine/tla.webp"
+              fill
+              className="object-cover transition-transform duration-500 scale-105 group-hover:scale-100"
+              sizes="(max-width: 768px) 100vw, 25vw"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/30 to-black/5" />
             <div className="relative z-10">
@@ -44,11 +48,12 @@ export default function Storitve() {
 
           {/* Strešne kritine */}
           <a href="#kontakt" className="bg-[#31353a] border border-[#404751] p-5 flex flex-col justify-end min-h-[280px] relative overflow-hidden group hover:border-[#9ccaff] transition-colors cursor-pointer">
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img
+            <Image
               alt="Strešne kritine"
-              className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 scale-105 group-hover:scale-100"
               src="/slike/storitve/stresne-kritine/streha.webp"
+              fill
+              className="object-cover transition-transform duration-500 scale-105 group-hover:scale-100"
+              sizes="(max-width: 768px) 100vw, 25vw"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/30 to-black/5" />
             <div className="relative z-10">
@@ -60,11 +65,12 @@ export default function Storitve() {
 
           {/* Sončne elektrarne */}
           <a href="#kontakt" className="bg-[#31353a] border border-[#404751] p-5 flex flex-col justify-end min-h-[280px] relative overflow-hidden group hover:border-[#9ccaff] transition-colors cursor-pointer">
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img
+            <Image
               alt="Sončne elektrarne"
-              className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 scale-105 group-hover:scale-100"
               src="/slike/storitve/soncne-elektrarne/soncni-paneli.webp"
+              fill
+              className="object-cover transition-transform duration-500 scale-105 group-hover:scale-100"
+              sizes="(max-width: 768px) 100vw, 25vw"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/30 to-black/5" />
             <div className="relative z-10">
@@ -76,11 +82,12 @@ export default function Storitve() {
 
           {/* Steklene površine */}
           <a href="#kontakt" className="bg-[#31353a] border border-[#404751] p-5 flex flex-col justify-end min-h-[280px] relative overflow-hidden group hover:border-[#9ccaff] transition-colors cursor-pointer">
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img
+            <Image
               alt="Steklene površine"
-              className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 scale-105 group-hover:scale-100"
               src="/slike/storitve/steklene-povrsine/notranjost.webp"
+              fill
+              className="object-cover transition-transform duration-500 scale-105 group-hover:scale-100"
+              sizes="(max-width: 768px) 100vw, 25vw"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/30 to-black/5" />
             <div className="relative z-10">

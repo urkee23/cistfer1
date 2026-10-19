@@ -41,7 +41,7 @@ export const metadata: Metadata = {
     type: 'website',
     images: [
       {
-        url: '/slike/hero/fasada-potem.jpg',
+        url: '/slike/hero/fasada-potem.webp',
         width: 1200,
         height: 630,
         alt: 'Čistfer — Čistilni servis zunanjih površin',
@@ -52,7 +52,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Čistfer — Čistilni servis zunanjih površin',
     description: 'Čistfer — profesionalno čiščenje zunanjih površin po celi Sloveniji.',
-    images: ['/slike/hero/fasada-potem.jpg'],
+    images: ['/slike/hero/fasada-potem.webp'],
   },
 }
 
@@ -83,9 +83,11 @@ export default function RootLayout({
   return (
     <html lang="sl">
       <head>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
         <link
           rel="stylesheet"
-          href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&display=block"
+          href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&display=swap"
         />
         <script
           type="application/ld+json"

@@ -61,6 +61,8 @@ function BeforeAfterSlider({
         className="absolute inset-0 w-full h-full object-cover"
         style={{ objectPosition: afterPosition }}
         draggable={false}
+        loading="eager"
+        fetchPriority="high"
       />
 
       {/* Before — enako polna slika, klipana z desne (clip-path, brez deformacij) */}
@@ -75,6 +77,8 @@ function BeforeAfterSlider({
           className="w-full h-full object-cover"
           style={{ objectPosition: beforePosition }}
           draggable={false}
+          loading="eager"
+          fetchPriority="high"
         />
       </div>
 

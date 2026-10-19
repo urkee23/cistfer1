@@ -1,3 +1,4 @@
+import Image from 'next/image'
 import { SparklesText } from '@/components/ui/sparkles-text'
 
 export default function ONas() {
@@ -56,12 +57,13 @@ export default function ONas() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 items-center">
             <div className="relative">
               <div className="border border-[#404751] bg-[#1c1b1b] relative z-10 w-full h-[500px] lg:h-[700px] overflow-hidden">
-                {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img
+                <Image
                   alt="Čistfer ekipa pri delu — visokotlačno čiščenje fasade"
-                  className="w-full h-full object-cover"
-                  style={{ objectPosition: 'center 65%' }}
                   src="/slike/o-nas/cistfer-akcija.webp"
+                  fill
+                  className="object-cover"
+                  style={{ objectPosition: 'center 65%' }}
+                  sizes="(max-width: 1024px) 100vw, 50vw"
                 />
               </div>
               <div className="absolute -bottom-6 -left-6 w-32 h-32 border-b-4 border-l-4 border-[#9ccaff] z-0" />

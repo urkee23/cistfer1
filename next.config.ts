@@ -24,8 +24,9 @@ const securityHeaders = [
 const nextConfig: NextConfig = {
   poweredByHeader: false,
   images: {
+    formats: ['image/avif', 'image/webp'],
     remotePatterns: [
-      // { hostname: 'example.com' },
+      { hostname: 'lh3.googleusercontent.com' },
     ],
   },
   async headers() {
