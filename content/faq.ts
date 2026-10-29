@@ -21,6 +21,10 @@ export const FAQ: FaqVprasanje[] = [
     odgovor: 'Odvisno od lokacije in vrste površine. Fasade na vlažnih ali osenčenih legah potrebujejo čiščenje na 3–5 let, sončne elektrarne enkrat letno, strehe pa vsake 4–7 let. Po ogledu vam povemo kaj velja za vaš objekt.',
   },
   {
+    vprasanje: 'Kje vse delate? Ali pokrivate celotno Primorsko?',
+    odgovor: 'Da — Čistfer pokriva celotno Primorsko regijo: Nova Gorica, Koper, Ajdovščina, Sežana, Idrija, Tolmin in vse okoliške kraje. Pokrivamo tudi Notranjsko: Postojna, Cerknica, Logatec in Ljubljana. Za projekte nad 300 € je prihod brezplačen.',
+  },
+  {
     vprasanje: 'Ali delate tudi izven Primorske?',
     odgovor: 'Da, pokrivamo celotno Primorsko in Notranjsko regijo — Nova Gorica, Koper, Ajdovščina, Sežana, Postojna, Idrija, Cerknica, Ljubljana in okolica. Za projekte nad 300 € je prihod brezplačen.',
   },

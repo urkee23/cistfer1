@@ -16,8 +16,8 @@ export const metadata: Metadata = {
     default: 'Čistfer — Čistilni servis zunanjih površin',
     template: '%s | Čistfer',
   },
-  description: 'Čistfer — profesionalno čiščenje fasad, teras, dovozov in vseh zunanjih površin po celi Sloveniji. Zanesljivo, temeljito in okolju prijazno.',
-  keywords: 'čistfer, cistfer, cistfer.si, čiščenje fasad, čiščenje teras, čiščenje dovozov, čistilni servis, pranje fasad, čiščenje zunanjih površin, Slovenija',
+  description: 'Čistfer — profesionalni čistilni servis zunanjih površin na Primorskem in Notranjskem. Čistimo fasade, strehe, talne površine in sončne elektrarne. Nova Gorica, Koper, Ajdovščina, Sežana, Postojna in okolica.',
+  keywords: 'čistfer, cistfer, cistfer.si, čiščenje primorska, čistilni servis primorska, čiščenje fasad primorska, pranje fasad primorska, čiščenje Nova Gorica, čiščenje Koper, čiščenje Ajdovščina, čiščenje Sežana, čiščenje Postojna, čiščenje fasad, čiščenje teras, čiščenje dovozov, čistilni servis, pranje fasad, čiščenje zunanjih površin, čiščenje notranjska, čiščenje Idrija, čiščenje Tolmin, čiščenje zunanjosti',
   authors: [{ name: 'Čistfer', url: 'https://www.cistfer.si' }],
   creator: 'Čistfer',
   publisher: 'Čistfer',
@@ -34,7 +34,7 @@ export const metadata: Metadata = {
   },
   openGraph: {
     title: 'Čistfer — Čistilni servis zunanjih površin',
-    description: 'Čistfer — profesionalno čiščenje zunanjih površin po celi Sloveniji.',
+    description: 'Profesionalni čistilni servis zunanjih površin na Primorskem in Notranjskem — fasade, strehe, sončne elektrarne, talne površine.',
     url: 'https://www.cistfer.si',
     siteName: 'Čistfer',
     locale: 'sl_SI',
@@ -51,7 +51,7 @@ export const metadata: Metadata = {
   twitter: {
     card: 'summary_large_image',
     title: 'Čistfer — Čistilni servis zunanjih površin',
-    description: 'Čistfer — profesionalno čiščenje zunanjih površin po celi Sloveniji.',
+    description: 'Profesionalni čistilni servis zunanjih površin na Primorskem in Notranjskem — fasade, strehe, sončne elektrarne, talne površine.',
     images: ['/slike/hero/fasada-potem.webp'],
   },
 }
@@ -60,19 +60,77 @@ const jsonLd = {
   '@context': 'https://schema.org',
   '@type': 'LocalBusiness',
   name: 'Čistfer',
-  alternateName: ['cistfer', 'cistfer.si'],
-  description: 'Profesionalni čistilni servis zunanjih površin po celi Sloveniji.',
+  alternateName: ['cistfer', 'cistfer.si', 'Čistfer čistilni servis'],
+  description: 'Profesionalni čistilni servis zunanjih površin na Primorskem in Notranjskem. Čistimo fasade, strehe, talne površine in sončne elektrarne.',
   url: 'https://www.cistfer.si',
   telephone: '+38631456663',
   email: 'info@cistfer.si',
-  areaServed: {
-    '@type': 'Country',
-    name: 'Slovenija',
-    sameAs: 'https://www.wikidata.org/wiki/Q215',
-  },
+  areaServed: [
+    { '@type': 'AdministrativeArea', name: 'Primorska', sameAs: 'https://www.wikidata.org/wiki/Q909409' },
+    { '@type': 'AdministrativeArea', name: 'Notranjska' },
+    { '@type': 'City', name: 'Nova Gorica', sameAs: 'https://www.wikidata.org/wiki/Q14533' },
+    { '@type': 'City', name: 'Koper', sameAs: 'https://www.wikidata.org/wiki/Q180117' },
+    { '@type': 'City', name: 'Ajdovščina' },
+    { '@type': 'City', name: 'Sežana' },
+    { '@type': 'City', name: 'Postojna' },
+    { '@type': 'City', name: 'Idrija' },
+    { '@type': 'City', name: 'Tolmin' },
+    { '@type': 'City', name: 'Cerknica' },
+    { '@type': 'City', name: 'Ljubljana' },
+  ],
   priceRange: '€€',
   serviceType: 'Čiščenje zunanjih površin',
+  hasOfferCatalog: {
+    '@type': 'OfferCatalog',
+    name: 'Čistilne storitve',
+    itemListElement: [
+      { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Čiščenje fasad', areaServed: 'Primorska' } },
+      { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Čiščenje streh', areaServed: 'Primorska' } },
+      { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Čiščenje sončnih elektrarn', areaServed: 'Primorska' } },
+      { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Čiščenje talnih površin', areaServed: 'Primorska' } },
+      { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Čiščenje steklenih površin', areaServed: 'Primorska' } },
+    ],
+  },
   sameAs: ['https://www.cistfer.si'],
+}
+
+const faqSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: [
+    {
+      '@type': 'Question',
+      name: 'Kdo opravlja čiščenje fasad na Primorskem?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Čistfer je profesionalni čistilni servis za zunanje površine na Primorskem. Pokrivamo Novo Gorico, Koper, Ajdovščino, Sežano in celotno Primorsko regijo.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'Ali Čistfer dela na Primorskem in v Novi Gorici?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Da, Čistfer pokriva celotno Primorsko regijo — Nova Gorica, Koper, Ajdovščina, Sežana, Idrija, Tolmin in okolica. Prav tako pokrivamo Notranjsko: Postojna, Cerknica in Ljubljana.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'Zakaj se čiščenje sploh splača?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Fasada ali streha pogosto ni poškodovana — samo umazana. Čiščenje jo vrne v prvotni videz za majhen delček cene barvanja ali zamenjave.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'Ali delate tudi izven Primorske?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Da, pokrivamo celotno Primorsko in Notranjsko regijo — Nova Gorica, Koper, Ajdovščina, Sežana, Postojna, Idrija, Cerknica, Ljubljana in okolica. Za projekte nad 300 € je prihod brezplačen.',
+      },
+    },
+  ],
 }
 
 export default function RootLayout({
@@ -92,6 +150,10 @@ export default function RootLayout({
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
         />
       </head>
       <body className={lexend.className}>

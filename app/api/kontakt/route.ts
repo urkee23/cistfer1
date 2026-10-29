@@ -67,8 +67,11 @@ const ALLOWED_ORIGINS = ['https://cistfer.si', 'https://www.cistfer.si', 'https:
 async function saveToGoogleSheets(data: FormData, storitevText: string, timestamp: string) {
   const url = process.env.GOOGLE_SCRIPT_URL
   const secret = process.env.GOOGLE_SCRIPT_SECRET
-  if (!url || !secret) return
-  await fetch(url, {
+  if (!url || !secret) {
+    console.error('[sheets] URL ali SECRET manjka', { url: !!url, secret: !!secret })
+    return
+  }
+  const res = await fetch(url, {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify({
@@ -81,6 +84,8 @@ async function saveToGoogleSheets(data: FormData, storitevText: string, timestam
       sporocilo: data.sporocilo,
     }),
   })
+  const text = await res.text()
+  console.log('[sheets] odgovor:', res.status, text)
 }
 
 async function sendTelegramNotification(data: FormData, storitevText: string, timestamp: string) {

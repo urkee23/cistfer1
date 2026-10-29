@@ -4,11 +4,13 @@ export default function Pokritost() {
       <div className="max-w-7xl mx-auto">
         <span className="text-xs font-bold uppercase text-[#9ccaff] tracking-widest block mb-4">POKRITOST</span>
         <h2 className="text-[40px] lg:text-[56px] font-black text-[#e0e2e9] uppercase tracking-tighter leading-[1.05] mb-4">
-          Od Primorske do Notranjske.
+          Čiščenje fasad na Primorskem in Notranjskem.
         </h2>
-        <p className="text-lg text-[#c0c7d3] mb-6 max-w-2xl">Pokrivamo celotno Primorsko in Notranjsko.</p>
+        <p className="text-lg text-[#c0c7d3] mb-4 max-w-2xl">
+          Čistfer je čistilni servis za zunanje površine s pokritostjo po celotni Primorski in Notranjski regiji. Čiščenje fasad, streh, sončnih elektrarn in talnih površin — kjerkoli na Primorskem.
+        </p>
         <p className="text-sm font-bold text-[#c0c7d3] uppercase tracking-widest mb-16">
-          Nova Gorica · Koper · Ajdovščina · Sežana · Postojna · Idrija · Tolmin · Ljubljana · in okolica
+          Nova Gorica · Koper · Ajdovščina · Sežana · Postojna · Idrija · Tolmin · Cerknica · Logatec · Ljubljana · in okolica
         </p>
         <div className="bg-[#0077c2] inline-flex flex-col md:flex-row items-start md:items-center gap-10 p-6 border-l-4 border-white">
           <p className="text-[22px] font-black text-white uppercase tracking-tighter">

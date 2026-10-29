@@ -51,3 +51,5 @@ README.md
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+.vercel

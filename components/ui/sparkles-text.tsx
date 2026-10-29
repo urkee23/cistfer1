@@ -36,7 +36,7 @@ const SparklesText: React.FC<SparklesTextProps> = ({
       const scale = Math.random() * 1 + 0.3
       const lifespan = Math.random() * 10 + 5
       const x = `${Math.random() * 100}%`
-      const y = `${Math.random() * 100}%`
+      const y = `${Math.random() * 60 - 50}%`
       return { id: `${x}-${y}-${Date.now()}`, x, y, color, delay, scale, lifespan }
     }
 
